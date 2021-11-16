@@ -14,14 +14,16 @@ function App() {
 					{
 						return val
 					}
-					else if(val.title.toLowerCase().includes(searchTerm.toLowerCase()))
+					else if(val.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+						val.keywords.toLowerCase().includes(searchTerm.toLowerCase()))
 					{
 						return val
 					}
 				}).map((val,key)=>{
 			return (
 				<div className="file" key={key}>
-					<p>{val.title}</p>
+					<h5><a href={val.link_to_pdf}>{val.title}</a></h5>
+					<p>{val.keywords}</p>
 				</div>
 				);
 		})}
