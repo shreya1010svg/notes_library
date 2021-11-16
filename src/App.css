@@ -9,6 +9,15 @@
 
 .App input {
   margin-top: 20px;
+  width: 350px;
+  height: 40px;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+p {
+  margin: 10px;
+  font-size: 18px;
 }
 
 .App-logo {
