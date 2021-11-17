@@ -1,34 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import JSONDATA from './MOCK_DATA.json';
-import {useState} from 'react';
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Routes as Switch, Route } from 'react-router-dom';
+import Home from './pages';
+import About from './pages/about';
+import AddMaterial from './pages/addMaterial';
+import SearchMaterial from './pages/searchMaterial';
+import Blogs from './pages/blogs';
+import SignUp from './pages/signup';
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState('')
-  return (
-	<div className="App">
-		<input type="text" placeholder="Search..." onChange={event => {setSearchTerm(event.target.value)}}/>
-		{JSONDATA.filter((val) =>
-				{
-					if(searchTerm == "")
-					{
-						return val
-					}
-					else if(val.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-						val.keywords.toLowerCase().includes(searchTerm.toLowerCase()))
-					{
-						return val
-					}
-				}).map((val,key)=>{
-			return (
-				<div className="file" key={key}>
-					<h5><a href={val.link_to_pdf}>{val.title}</a></h5>
-					<p>{val.keywords}</p>
-				</div>
-				);
-		})}
-	</div>
-	);
+return (
+	<Router>
+	<Navbar />
+	<Switch>
+		<Route path='/' element={<Home/>} />
+		<Route path='/about' element={<About/>} />
+		<Route path='/addMaterial' element={<AddMaterial/>} />
+		<Route path='/searchMaterial' element={<SearchMaterial/>} />
+		<Route path='/blogs' element={<Blogs/>} />
+		<Route path='/sign-up' element={<SignUp/>} />
+	</Switch>
+	</Router>
+);
 }
 
 export default App;
+
