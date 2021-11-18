@@ -5,12 +5,11 @@ return (
 	<div
 	style={{
 		display: 'flex',
-		justifyContent: 'Right',
-		alignItems: 'Right',
-		height: '100vh'
+		justifyContent: 'Left',
+		alignItems: 'Left'
 	}}
 	>
-	<h1>Welcome to GeeksforGeeks</h1>
+	<h1>This is the home page</h1>
 	</div>
 );
 };

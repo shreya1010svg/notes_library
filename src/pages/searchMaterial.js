@@ -1,5 +1,5 @@
 import React from 'react';
-import JSONDATA from '/home/shreya/notes-library/src/MOCK_DATA.json';
+import JSONDATA from '/home/shreya/notes_library/src/MOCK_DATA.json';
 import {useState} from 'react';
 
 const SearchMaterial = () => {
@@ -9,9 +9,8 @@ return (
 	<div
 	style={{
 		display: 'flex',
-		justifyContent: 'Right',
-		alignItems: 'Right',
-		height: '100vh'
+		justifyContent: 'Left',
+		alignItems: 'Left'
 	}}
 	>
 	<h1>Search for Course Materials here.</h1>
